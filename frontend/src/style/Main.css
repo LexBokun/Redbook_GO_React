@@ -1,0 +1,114 @@
+.Main {
+  width: 100%;
+}
+
+.container_navbar {
+  background-image: url('../resyrs/main/main.png');
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  /* image 1 */
+
+  position: relative;
+  left: 0px;
+  top: 0px;
+
+  h1 {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: Arial, sans-serif;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    height: 80px;
+
+    .menu {
+      width: 3vw;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      align-content: unset;
+      gap: 0px;
+
+      width: 40%;
+
+      a {
+        display: inline-block;
+        margin: 0 20px;
+
+        color: white;
+        text-decoration: none;
+        font-size: 1.5vw;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #cce7ff;
+        }
+      }
+    }
+  }
+}
+
+main {
+  width: 100vw;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+
+  .razdel_img {
+    width: 100%;
+    height: 5vh;
+    /* background-color: aquamarine; */
+    /* background-image: url('../resyrs/main/1.png'); */
+    background-size: cover;
+    position: absolute;
+    z-index: 3;
+    top: -30px;
+    /* left: -20px; */
+  }
+
+  .section_1 {
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+
+    .flex {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+      align-items: center;
+      align-content: unset;
+      gap: 0px;
+
+      .col-1 {
+        width: 40%;
+      }
+
+      .col-2 {
+        width: 40%;
+      }
+    }
+  }
+}
