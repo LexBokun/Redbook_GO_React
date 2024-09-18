@@ -55,7 +55,7 @@ export default function Moderation() {
                 carts={[
                   { id: 1, title: 'Горностай', isPopulationGrowth: true, population: 9 },
                   { id: 2, title: 'Зеленый дятел', isPopulationGrowth: false, population: 3 },
-                  { id: 3, title: 'Бобры', isPopulationGrowth: true, population: 4 },
+                  { id: 3, title: 'Язвенник обыкновенный', isPopulationGrowth: true, population: 4 },
                   { id: 4, title: 'Пальчатокоренник балтийский', isPopulationGrowth: true, population: 3 },
                 ]}
               />
