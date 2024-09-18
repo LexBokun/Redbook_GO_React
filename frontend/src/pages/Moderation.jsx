@@ -56,7 +56,7 @@ export default function Moderation() {
                   { id: 1, title: 'Горностай', isPopulationGrowth: true, population: 9 },
                   { id: 2, title: 'Зеленый дятел', isPopulationGrowth: false, population: 3 },
                   { id: 3, title: 'Бобры', isPopulationGrowth: true, population: 4 },
-                  { id: 4, title: 'Каталог 4', isPopulationGrowth: true, population: 3 },
+                  { id: 4, title: 'Пальчатокоренник балтийский', isPopulationGrowth: true, population: 3 },
                 ]}
               />
             </div>
