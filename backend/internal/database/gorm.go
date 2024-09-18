@@ -34,7 +34,7 @@ func InitBD() {
 		log.Println("Database connection check passed")
 	}
 
-	DB.AutoMigrate(&models.Species{})
+	DB.AutoMigrate(&models.Species{}, &models.Admin{})
 }
 
 func checkConnection() error {

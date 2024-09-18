@@ -23,6 +23,6 @@ func GetSpecies(c *gin.Context) {
 	}
 	// Возвращаем JSON с постами
 	c.JSON(http.StatusOK, gin.H{
-		"post": species,
+		"species": species,
 	})
 }
