@@ -6,7 +6,7 @@ export default function Cataloglist({ carts }) {
   return (
     <div className="Cataloglist">
       {carts.map((cart) => (
-        <CartItem key={cart.id} cart={cart} title={cart.title} />
+        <CartItem key={cart.id} cart={cart} isPopulationGrowth={cart.isPopulationGrowth}/>
       ))}
     </div>
   )

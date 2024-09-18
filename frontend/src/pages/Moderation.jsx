@@ -51,10 +51,13 @@ export default function Moderation() {
           <div onClick={() => setVisibleCatalogue(true)} className="conteiner_catalogue">
             <h3>Флора и фауна</h3>
             <div className="catalogue">
-              <Cataloglist carts={[{id: 1, title: 'Каталог 1', body: 'Описание каталога 1'}, {id: 2, title: 'Каталог 2', body: 'Описание каталога 2'}]} />
+              <Cataloglist carts={[{id: 1, title: 'Выдра', body: 'Описание каталога 1', isPopulationGrowth: true}, {id: 2, title: 'Каталог 2', body: 'Описание каталога 2', isPopulationGrowth: false}, {id: 3, title: 'Каталог 3', body: 'Описание каталога 3', isPopulationGrowth: true}, {id: 4, title: 'Каталог 4', body: 'Описание каталога 4', isPopulationGrowth: true}]} />
             </div>
           </div>
-          <div className="conteiner_kart"></div>
+          <div className="conteiner_kart">
+            <h3>Просмотр онлайн карты</h3>
+            <img width={300} src="https://github.com/LexBokun/Redbook_GO_React/blob/main/frontend/src/assets/image.png" alt="" />
+          </div>
         </section>
 
         <section className="novosti">
