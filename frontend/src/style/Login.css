@@ -8,9 +8,9 @@
   flex-direction: column;  
 }
 .icon {
-  width: 100px;
-  height: 100px;
-  background-image: url('../resyrs/login/image.png');
+  width: 50px;
+  height: 50px;
+  background-image: url('../resyrs/login/free-icon-user-9463231.png');
   background-size: cover;
 }
 h1 {
