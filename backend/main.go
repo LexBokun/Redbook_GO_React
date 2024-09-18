@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-    url := "http://localhost:8080/species"
+    url := "http://localhost:8080/admin/species"
 
     // Создаем данные запроса
     data := map[string]interface{}{
