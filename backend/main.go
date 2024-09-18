@@ -28,7 +28,6 @@ func main() {
         return
     }
 
-    // Создаем POST-запрос
     resp, err := http.Post(url, "application/json", bytes.NewBuffer(jsonData))
     if err != nil {
         fmt.Println("Error making request:", err)

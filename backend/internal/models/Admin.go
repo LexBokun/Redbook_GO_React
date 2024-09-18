@@ -6,7 +6,7 @@ import (
 
 type Admin struct {
     gorm.Model
-    Username string `gorm:"unique;not null"`
+    Username string `gorm:"unique;not null"` // Логин админа
     Password string `gorm:"not null"` // Хранит хэшированный пароль
 		IsAdmin  bool   `gorm:"default:false"`
 }
