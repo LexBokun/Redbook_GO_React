@@ -13,7 +13,7 @@ type Species struct {
 	Status         string         `gorm:"not null"` // Статус в Красной книге (например, исчезающий, уязвимый и т.д.)
 	Description    string         // Описание вида
 	Habitat        string         // Среда обитаяни
-	Coordinates    string					// Полигон обитния вида
+	Coordinates    [][]float64     `gorm:"type:jsonb"` // Поле для координат полигона
 	Population     int            // Популяция вида
 	CreatedAt      time.Time      // Время создания записи
 	UpdatedAt      time.Time      // Время последнего обновления

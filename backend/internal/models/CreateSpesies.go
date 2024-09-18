@@ -7,5 +7,6 @@ type CreateSpeciesRequest struct {
     Status         string `gorm:"not null" json:"status"`    // Статус в Красной книге
     Description    string `json:"description"`
     Habitat        string `json:"habitat"` 
+		Coordinates    [][]float64     `gorm:"type:jsonb"`
     Population     int    `gorm:"not null" json:"population"`
 }

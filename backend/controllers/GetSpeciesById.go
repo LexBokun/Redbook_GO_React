@@ -1,4 +1,4 @@
-package api
+package controllers
 
 import (
 	"net/http"
@@ -11,9 +11,10 @@ import (
 
 func GetSpeciesById(c *gin.Context) {
 	idParam := c.Param("id")
-	id, err := strconv.Atoi(idParam); if err != nil{
+	id, err := strconv.Atoi(idParam)
+	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid species ID"})
-    return
+		return
 	}
 
 	var species models.Species
@@ -21,9 +22,9 @@ func GetSpeciesById(c *gin.Context) {
 	// Получение объекта species по ID
 	if err := database.DB.First(&species, id).Error; err != nil {
 		if err.Error() == "record not found" {
-				c.JSON(http.StatusNotFound, gin.H{"error": "Species not found"})
+			c.JSON(http.StatusNotFound, gin.H{"error": "Species not found"})
 		} else {
-				c.JSON(http.StatusInternalServerError, gin.H{"error": "Database error"})
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Database error"})
 		}
 		return
 	}
