@@ -1,16 +1,13 @@
 import axios from 'axios'
 
 export default class Service {
-  static async getAllCards(limit, page) {
-    const response = await axios.get('/posts', {
-      params: {
-
-    })
-    return response
+  static async getAllCards() {
+    const response = await axios.get('/cart')
+    return response.data
   }
 
-  static async getById(id) {
-    const response = await axios.get('https://jsonplaceholder.typicode.com/posts/' + id)
+  static async getByTitle(title) {
+    const response = await axios.get('/cart/' + title)
     return response.data
   }
 }
