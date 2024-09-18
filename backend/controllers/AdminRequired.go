@@ -13,7 +13,7 @@ import (
 // Login обрабатывает запрос на вход пользователя и возвращает JWT токен
 func Login(c *gin.Context) {
 	db := c.MustGet("db").(*gorm.DB)
-
+	
 	var input models.Input
 
 	if err := c.ShouldBindJSON(&input); err != nil {

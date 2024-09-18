@@ -5,12 +5,13 @@ import (
     "encoding/json"
     "fmt"
     "net/http"
+		
 )
 
 func main() {
-    url := "http://localhost:8080/admin/species"
+    url := "http://localhost:8080/species"
 
-    // Создаем данные запроса
+    // Данные запроса
     data := map[string]interface{}{
         "scientificName": "Panthera pardus",
         "CommonName":     "Leopard",
@@ -19,24 +20,31 @@ func main() {
         "Description":     "Large cat species",
         "Habitat":         "Savannahs and forests",
 				"Population":				100,
+				"coordinates": [][]float64{
+					{55.760438, 37.436393},
+					{55.760457, 37.435314},
+					{55.760267, 37.434449},
+					{55.760868, 37.432774},
+				},
     }
+
+
     
     // Преобразуем данные в JSON
-    jsonData, err := json.Marshal(data)
-    if err != nil {
-        fmt.Println("Error marshalling data:", err)
+    jsonData2, err2 := json.Marshal(data)
+    if err2 != nil {
+        fmt.Println("Error marshalling data:", err2)
         return
     }
 
-    resp, err := http.Post(url, "application/json", bytes.NewBuffer(jsonData))
-    if err != nil {
-        fmt.Println("Error making request:", err)
+    resp2, err2 := http.Post(url, "application/json", bytes.NewBuffer(jsonData2))
+    if err2 != nil {
+        fmt.Println("Error making request:", err2)
         return
     }
-    defer resp.Body.Close()
+    defer resp2.Body.Close()
 
-    // Читаем и выводим ответ
     body := new(bytes.Buffer)
-    body.ReadFrom(resp.Body)
+    body.ReadFrom(resp2.Body)
     fmt.Println("Response:", body.String())
 }

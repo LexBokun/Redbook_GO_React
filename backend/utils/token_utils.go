@@ -3,15 +3,23 @@ package utils
 import (
 	"os"
 	"time"
+	"github.com/joho/godotenv"
+	"log"
 
 	"github.com/LexBokun/Redbook_GO_React/backend/internal/models"
 	"github.com/dgrijalva/jwt-go"
 )
 
+func init(){
+	if err := godotenv.Load(); err != nil {
+		log.Fatal("Error load .env file")
+	}
+}
 // Секретный ключ для подписи JWT токенов
-var jwtSecret = []byte(os.Getenv("JWT_SECRET_KEY"))
 
 // CreateToken создает новый JWT токен
+var jwtSecret = []byte(os.Getenv("JWT_SECRET_KEY"))
+
 func CreateToken(userID uint, isAdmin bool) (string, error) {
 	claims := models.Claims{
 		UserID:  userID,

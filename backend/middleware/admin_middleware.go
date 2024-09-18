@@ -2,13 +2,18 @@ package middleware
 
 import (
     "net/http"
+		"log"
+		
     "github.com/gin-gonic/gin"
     "github.com/LexBokun/Redbook_GO_React/backend/utils"
 )
 
 //Middleware для проверки прав администратора
 func AdminRequired(c *gin.Context) {
-    tokenStr := c.Request.Header.Get("Authorization")
+    tokenStr := c.GetHeader("Authorization")
+
+		log.Println("Request Headers:", c.Request.Header)
+		
     if tokenStr == "" {
         c.JSON(http.StatusUnauthorized, gin.H{"error": "No token provided"})
         c.Abort()
