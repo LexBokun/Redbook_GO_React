@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 import MyModal from '../components/UI/MyModal/MyModal'
 import { useState } from 'react'
-import { Button, Offcanvas } from 'react-bootstrap'
+import { Button, Offcanvas, Card } from 'react-bootstrap'
 
 import Cataloglist from '../components/Cataloglist'
 
@@ -51,7 +51,14 @@ export default function Moderation() {
           <div onClick={() => setVisibleCatalogue(true)} className="conteiner_catalogue">
             <h3>Флора и фауна</h3>
             <div className="catalogue">
-              <Cataloglist carts={[{id: 1, title: 'Выдра', body: 'Описание каталога 1', isPopulationGrowth: true}, {id: 2, title: 'Каталог 2', body: 'Описание каталога 2', isPopulationGrowth: false}, {id: 3, title: 'Каталог 3', body: 'Описание каталога 3', isPopulationGrowth: true}, {id: 4, title: 'Каталог 4', body: 'Описание каталога 4', isPopulationGrowth: true}]} />
+              <Cataloglist
+                carts={[
+                  { id: 1, title: 'Горностай', isPopulationGrowth: true, population: 9 },
+                  { id: 2, title: 'Зеленый дятел', isPopulationGrowth: false, population: 3 },
+                  { id: 3, title: 'Бобры', isPopulationGrowth: true, population: 4 },
+                  { id: 4, title: 'Каталог 4', isPopulationGrowth: true, population: 3 },
+                ]}
+              />
             </div>
           </div>
           <div className="conteiner_kart">
@@ -63,6 +70,16 @@ export default function Moderation() {
         <section className="novosti">
           <h2>Новости</h2>
           <div className="novosti_content"></div>
+          <Card className="bg-dark text-white">
+            <Card.Img
+              src="https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/catalog/novosti.png"
+              alt="Card image"
+            />
+            <Card.ImgOverlay>
+              <Card.Title>Тысячи пловцов преодолели Москву-реку: заплыв прошел через территорию Москворецкого парка</Card.Title>
+              <Card.Text>01.09.24</Card.Text>
+            </Card.ImgOverlay>
+          </Card>
           <Button variant="success" className="novosti_button">
             Выложить новости
           </Button>
