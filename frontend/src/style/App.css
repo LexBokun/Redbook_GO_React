@@ -12,38 +12,6 @@
 
 
 
-.PostsItem {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
-  width: 600px;
-  padding: 20px;
-  margin: 10px;
-  border: 5px solid black;
-
-  strong {
-    margin-bottom: 10px;
-  } 
-
-  &:hover {
-    border: 5px solid red;
-    transition: 0.3s;
-    
-    p {
-      color: brown;
-    }
-    .but {
-      transition: 0.3s;
-      color: brown;
-    } 
-  }
-
-  .but {
-    margin-left: 30px;
-  } 
-}
-
 form {
   width: 620px;
 }
@@ -69,3 +37,11 @@ form {
   display: flex;
 }
 
+.carts {
+  width: 200px;
+}
+
+.Cataloglist {
+  width: 100%;
+  
+}
