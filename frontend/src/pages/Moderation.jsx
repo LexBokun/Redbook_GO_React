@@ -70,7 +70,7 @@ export default function Moderation() {
         <section className="novosti">
           <h2>Новости</h2>
           <div className="novosti_content"></div>
-          <Card className="bg-dark text-white">
+          <Card className="bg-dark text-white" style={{ width: '80vw', margin: '20px' }}>
             <Card.Img
               src="https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/catalog/novosti.png"
               alt="Card image"

@@ -13,7 +13,7 @@ export default function CartItem({ cart, isPopulationGrowth }) {
     //     <p>{cart.body}</p>
     //   </div>
     // </div>
-    <Card className="bg-dark text-white carts cart__image" style={{ backgroundImage: `url(https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/catalog/${cart.title}.png)`, backgroundSize: 'cover' }}>
+    <Card className="bg-dark text-white carts cart__image" style={{ backgroundImage: `url(https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/catalog/${cart.title.replace(/ /g, '_')}.png)`, backgroundSize: 'cover' }}>
       <div className="cart__cotent">
         <Card.Title className="cart__title">{cart.title}</Card.Title>
         <div className="hr"></div>
