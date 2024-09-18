@@ -56,7 +56,7 @@ export default function Moderation() {
           </div>
           <div className="conteiner_kart">
             <h3>Просмотр онлайн карты</h3>
-            <img width={300} src="https://github.com/LexBokun/Redbook_GO_React/blob/main/frontend/src/assets/image.png" alt="" />
+            <img width={300} src="https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/image.png" alt="" />
           </div>
         </section>
 
