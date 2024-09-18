@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useRef, useMemo, useEffect } from 'react'
 import './style/App.css'
 import { BrowserRouter, Link, Route, Routes, Switch, Redirect } from 'react-router-dom'

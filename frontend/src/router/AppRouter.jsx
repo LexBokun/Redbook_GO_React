@@ -18,7 +18,7 @@ export default function AppRouter() {
         <Routes>
           <Route exact path="/" element={<Main />} />
           <Route exact path="/catalog" element={<CartCatalog />} />
-          <Route exact path="/catalog/:title" element={<CartMain />} />
+          <Route exact path="/catalog/:id" element={<CartMain />} />
           <Route path="/login" element={<Login />} />
           <Route exact path="/moderation" element={<Moderation />} />
           <Route exact path="/moderation/cart/:title" element={<CartModeration />} />
@@ -27,7 +27,7 @@ export default function AppRouter() {
         <Routes>
           <Route exact path="/" element={<Main />} />
           <Route exact path="/catalog" element={<CartCatalog />} />
-          <Route exact path="/catalog/:title" element={<CartMain />} />
+          <Route exact path="/catalog/:id" element={<CartMain />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       )}
