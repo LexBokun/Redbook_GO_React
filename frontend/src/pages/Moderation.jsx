@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { version } from 'react'
 import { useContext } from 'react'
 
 import '../style/Moderation.css'
@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 import MyModal from '../components/UI/MyModal/MyModal'
 import { useState } from 'react'
 import { Button, Offcanvas, Card, Form } from 'react-bootstrap'
+import ListGroup from 'react-bootstrap/ListGroup'
 
 import Cataloglist from '../components/Cataloglist'
 
@@ -97,26 +98,31 @@ export default function Moderation() {
             </svg>
           </Button>
         </div>
+        <ListGroup>
+          <ListGroup.Item action onClick={() => rest('/moderation/catalog')}>
+            Каталог
+          </ListGroup.Item>
+        </ListGroup>
       </Offcanvas>
 
       <MyModal visible={visibleKart} setVisible={setVisibleKart}>
-          <img width={500} src="https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/moderation/kart.png" alt="карта" />
+        <img width={500} src="https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/moderation/kart.png" alt="карта" />
       </MyModal>
 
       <MyModal visible={visibleNovosti} setVisible={setVisibleNovosti}>
-          <Form >
-            <Form.Group className="mb-3" controlId="formBasicTitle">
-              <Form.Control type="text" placeholder="Название поста" />
-            </Form.Group>
+        <Form>
+          <Form.Group className="mb-3" controlId="formBasicTitle">
+            <Form.Control type="text" placeholder="Название поста" />
+          </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicBody">
-              <Form.Control type="text" placeholder="Описание поста" />
-            </Form.Group>
-            
-            <Button className="novosti_button" variant="success" type="submit" onClick={() => setVisibleNovosti(false)}>
-              Выложить
-            </Button>
-          </Form>
+          <Form.Group className="mb-3" controlId="formBasicBody">
+            <Form.Control type="text" placeholder="Описание поста" />
+          </Form.Group>
+
+          <Button className="novosti_button" variant="success" type="submit" onClick={() => setVisibleNovosti(false)}>
+            Выложить
+          </Button>
+        </Form>
       </MyModal>
     </>
   )

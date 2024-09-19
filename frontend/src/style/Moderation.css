@@ -127,7 +127,7 @@ h3 {
   }
 }
 .novosti_img {
-  filter: blur(3px);
+  filter: blur(1.5px);
 }
 .offcanvas {
 

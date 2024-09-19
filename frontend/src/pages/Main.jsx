@@ -3,18 +3,23 @@ import '../style/Main.css'
 import { useNavigate, Link } from 'react-router-dom'
 import MyNavbar from '../components/UI/navbar_Main/MyNavbar'
 import YandexMapComponent from '../components/YandexMapComponent'
+import Cataloglist from '../components/Cataloglist'
 
 export default function Main() {
   const resu = useNavigate()
   return (
     <div className="Main">
       <div className="container_navbar">
-        <header className="navbar">
+        <div className="navbar">
           <nav className="nav-links">
-            <a href="#about">О парке</a>
-            <a onClick={resu("/catalog")} >Фауна</a>
+            <a className="a" href="#about">
+              О парке
+            </a>
+            <div className="a" onClick={() => resu('/catalog')}>
+              Фауна
+            </div>
           </nav>
-        </header>
+        </div>
         <h1>Замоцкворецкий парк</h1>
       </div>
 
@@ -52,9 +57,6 @@ export default function Main() {
                 Откройте для себя скрытые сокровища Москворецкого парка природы и истории в Москве, где обитают более 3 000 редких видов животных и
                 растений, включая те, что занесены в Красную книгу Москвы, и погрузитесь в уникальную флору и фауну столицы!
               </p>
-              <div className="btn">
-                <button>Подробнее</button>
-              </div>
             </div>
             <div className="col-2">
               <img src="https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/main/eed.png" alt="" />
@@ -65,11 +67,17 @@ export default function Main() {
         <section id="catalogue" className="catalogue">
           <div className="catalogue__content">
             <div className="catalogue__title">
-              <h2>Каталог</h2>
+              <h2 style={{margin: '30px'}}>Каталог</h2>
+              <Cataloglist
+                carts={[
+                  { id: 1, title: 'Горностай', isPopulationGrowth: true, population: 9 },
+                  { id: 2, title: 'Зелёный дятел', isPopulationGrowth: false, population: 3 },
+                  { id: 3, title: 'Язвенник обыкновенный', isPopulationGrowth: true, population: 4 },
+                  { id: 4, title: 'Пальчатокоренник балтийский', isPopulationGrowth: true, population: 3 },
+                ]}
+              />
             </div>
-            <div className="catalogue__items">
-              
-            </div>
+            <div className="catalogue__items"></div>
           </div>
         </section>
         {/* <YandexMapComponent /> */}

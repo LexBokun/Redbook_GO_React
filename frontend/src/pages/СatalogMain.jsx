@@ -32,7 +32,7 @@ export default function CartCatalog() {
         [55.7, 37.55],
         [55.72, 37.53],
         [55.75, 37.5],
-      ]
+      ],
     },
     {
       id: 2,
@@ -59,7 +59,7 @@ export default function CartCatalog() {
         [55.7, 37.55],
         [55.72, 37.53],
         [55.75, 37.5],
-      ]
+      ],
     },
     {
       id: 3,
@@ -84,7 +84,7 @@ export default function CartCatalog() {
         [55.7, 37.55],
         [55.72, 37.53],
         [55.75, 37.5],
-      ]
+      ],
     },
   ])
 
@@ -92,7 +92,7 @@ export default function CartCatalog() {
     <div className="container">
       {/* Заголовок и фильтр */}
       <div className="d-flex justify-content-between align-items-center mt-4">
-        <h1>Фильтрация и Поиск</h1>
+        <h1>Каталог</h1>
         <div>
           <label htmlFor="filterSelect" className="me-2">
             Тип:
@@ -183,11 +183,13 @@ export default function CartCatalog() {
                       </div>
                     </p>
                   </div>
-                    {cart.isHibernation && (
-                      <div className="hibernation">
-                        <div>Птица находится в зимовке в период с <b>октября</b> по <b>март</b></div>
+                  {cart.isHibernation && (
+                    <div className="hibernation">
+                      <div>
+                        Птица находится в зимовке в период с <b>октября</b> по <b>март</b>
                       </div>
-                    )}
+                    </div>
+                  )}
                 </div>
               </div>
               {/* описание */}
@@ -200,11 +202,25 @@ export default function CartCatalog() {
             <div className="col-md-4 areal">
               <div className="card">
                 <div className="card-body">
-                <div
-                    className="card-images"
-                    style={{
-                      backgroundImage: `url("https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/kart/${cart.id}.png")`,
-                    }}></div>
+                  {cart.id === 1 ? (
+                    <YandexMap
+                      center={[55.75, 37.6]} // Центр карты
+                      zoom={10} // Масштаб карты
+                      polygonCoords={cart.Coordinates} // Координаты полигона
+                      hintContent="Неровная зона" // Подсказка для полигона
+                      fillColor="#FF0000" // Цвет заливки полигона
+                      strokeColor="#0000FF" // Цвет границ полигона
+                      opacity={0.6} // Прозрачность полигона
+                      strokeWidth={3} // Толщина линии полигона
+                      strokeStyle="shortdash" // Стиль линии полигона
+                    />
+                  ) : (
+                    <div
+                      className="card-images"
+                      style={{
+                        backgroundImage: `url("https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/kart/${cart.id}.png")`,
+                      }}></div>
+                  )}
                   <h5 className="card-title">Ареал обитания</h5>
                   <p className="card-text">{cart.habitat}</p>
                 </div>
