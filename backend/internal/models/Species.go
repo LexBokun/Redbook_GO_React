@@ -4,7 +4,6 @@ import (
 	"time"
 
 	"gorm.io/gorm"
-	"gorm.io/datatypes"
 )
 
 type Species struct {
@@ -18,7 +17,7 @@ type Species struct {
 	Status         string         `gorm:"not null"` 		// Статус в Красной книге (например, исчезающий, уязвимый и т.д.)
 	Description    string         											// Описание вида
 	Habitat        string         											// Среда обитаяни
-	Coordinates    datatypes.JSON     								  // Поле для координат полигона
+	Coordinates    [][][2]float64    								  // Поле для координат полигона
 	ResidenceTime  string 															// Время прибывания вида на полигоне
 	Population     int            											// Популяция вида
 	CreatedAt      time.Time      											// Время создания записи

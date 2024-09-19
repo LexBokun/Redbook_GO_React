@@ -17,5 +17,5 @@ func main() {
 	r.POST("/species", controllers.CreateSpecies)
 	r.PUT("/species/:id", controllers.UpdateSpecies)
 	r.DELETE("/species/:id", controllers.DeleteSpecies)
-	r.Run(":8080")
+	r.Run("127.0.0.1:3306")
 }

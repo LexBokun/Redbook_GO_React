@@ -1,15 +1,14 @@
 package main
 
 import (
-    "bytes"
-    "encoding/json"
-    "fmt"
-    "net/http"
-		
+	"bytes"
+	"encoding/json"
+	"fmt"
+	"net/http"
 )
 
 func main() {
-    url := "http://localhost:8080/species"
+    url := "http://127.0.0.1:3306/species"
 
     // Данные запроса
     data := map[string]interface{}{
@@ -29,11 +28,9 @@ func main() {
 				Горностай на городских природных территориях – это редкий вид, включённый в Красную Книгу г. Москвы. `,
         "Habitat":         "Savannahs and forests",
 				"Population":				9,
-				"Coordinates": [][]float64{{55.760438, 37.436393}, {55.760457, 37.435314}, {55.760267, 37.434449}, {55.760868, 37.432774}},
+				"Coordinates": [][][2]float64{{{55.760438, 37.436393}, {55.760457, 37.435314}, {55.760267, 37.434449}, {55.760868, 37.432774}}},
 				"ResidenceTime": "Птица находится в зимовке в период с октября по март",
     }
-
-
     
     // Преобразуем данные в JSON
     jsonData2, err2 := json.Marshal(data)

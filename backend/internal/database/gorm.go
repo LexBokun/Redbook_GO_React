@@ -7,7 +7,7 @@ import (
 
 	"github.com/LexBokun/Redbook_GO_React/backend/internal/models"
 	"github.com/joho/godotenv"
-	"gorm.io/driver/postgres"
+	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
 
@@ -20,7 +20,7 @@ func InitBD() {
 	dns := os.Getenv("DNS")
 
 	var err error
-	db, err := gorm.Open(postgres.Open(dns), &gorm.Config{})
+	db, err := gorm.Open(mysql.Open(dns), &gorm.Config{})
 	if err != nil {
 		log.Fatal("Failed to connect to the database:", err)
 	}
@@ -33,7 +33,6 @@ func InitBD() {
 	} else {
 		log.Println("Database connection check passed")
 	}
-
 	DB.AutoMigrate(&models.Species{})
 }
 
