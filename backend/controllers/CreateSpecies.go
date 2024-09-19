@@ -3,16 +3,15 @@ package controllers
 import (
 	"net/http"
 
+	"github.com/LexBokun/Redbook_GO_React/backend/internal/database"
 	"github.com/LexBokun/Redbook_GO_React/backend/internal/models"
 	"github.com/LexBokun/Redbook_GO_React/backend/services"
-
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 )
 
-// Функция для добавления нового вида в базу данных
 func CreateSpecies(c *gin.Context) {
-	var req models.CreateSpeciesRequest
+	var req models.Species
 
 	// Валидация данных из запроса
 	if err := c.ShouldBindJSON(&req); err != nil {
@@ -20,34 +19,22 @@ func CreateSpecies(c *gin.Context) {
 		return
 	}
 
-	// Создаем объект для нового вида на основе данных запроса
 	species := models.Species{
 		ScientificName: req.ScientificName,
 		CommonName:     req.CommonName,
-		Category:       req.Category,
+		Class:       		req.Class,
+		Group: 					req.Group,
+		Family: 				req.Family,
+		Kind: 					req.Kind,		
 		Status:         req.Status,
 		Description:    req.Description,
 		Habitat:        req.Habitat,
-		Population:     req.Population,
-		Coordinates:    req.Coordinates,
+		Population: 		req.Population,	
+		// Coordinates: 		req.Coordinates,
 	}
 
-	// Получаем подключение к базе данных из контекста
-	db, exists := c.Get("db")
-	if !exists {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get database connection"})
-		return
-	}
-
-	database, ok := db.(*gorm.DB)
-	if !ok {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Database connection is invalid"})
-		return
-	}
-
-	err := services.CreateSpecies(database, &species)
-	if err != nil {
-		if err.Error() == "UNIQUE constraint failed: species.scientific_name" {
+	if err := services.CreateSpecies(database.DB, &species); err != nil {
+		if err == gorm.ErrDuplicatedKey {
 			c.JSON(http.StatusConflict, gin.H{"error": "Species with this scientific name already exists"})
 		} else {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to add species", "details": err.Error()})
@@ -55,8 +42,5 @@ func CreateSpecies(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusCreated, gin.H{
-		"message": "Species added successfully",
-		"species": species,
-	})
+	c.JSON(http.StatusCreated, gin.H{"message": "Species successfully added", "species": species})
 }
