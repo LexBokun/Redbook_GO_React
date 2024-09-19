@@ -7,7 +7,8 @@ import CartMain from '../pages/CartMain'
 import Login from '../pages/Login'
 import Moderation from '../pages/Moderation'
 import CartModeration from '../pages/CartModeration'
-import CartCatalog from '../pages/СardСatalog'
+import СatalogMain from '../pages/СatalogMain'
+import CatalogModeration from '../pages/CatalogModeration'
 
 export default function AppRouter() {
   const { isAuth, setIsAuth } = useContext(AuthContext)
@@ -17,17 +18,18 @@ export default function AppRouter() {
       {isAuth ? (
         <Routes>
           <Route exact path="/" element={<Main />} />
-          <Route exact path="/catalog" element={<CartCatalog />} />
-          <Route exact path="/catalog/:id" element={<CartMain />} />
+          <Route exact path="/catalog" element={<СatalogMain />} />
+          <Route exact path="/catalog/cart/:id" element={<CartMain />} />
           <Route path="/login" element={<Login />} />
           <Route exact path="/moderation" element={<Moderation />} />
-          <Route exact path="/moderation/cart/:title" element={<CartModeration />} />
+          <Route exact path="/moderation/catalog" element={<CatalogModeration />} />
+          <Route exact path="/moderation/catalog/cart/:id" element={<CartModeration />} />
         </Routes>
       ) : (
         <Routes>
           <Route exact path="/" element={<Main />} />
-          <Route exact path="/catalog" element={<CartCatalog />} />
-          <Route exact path="/catalog/:id" element={<CartMain />} />
+          <Route exact path="/catalog" element={<СatalogMain />} />
+          <Route exact path="/catalog/cart/:id" element={<CartMain />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       )}

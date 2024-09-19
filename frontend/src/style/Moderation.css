@@ -93,16 +93,16 @@ main {
     align-items: center;
     gap: 0px;
 
-    .novosti_button {
-      width: 30vw;
-      background-color: #8BB82A;
-      width: 30vw;
-      font-size: 20px;
-      border-radius: 15px;
+    margin: 10px 0 50px 0;
 
-
-    }
   }
+}
+.novosti_button {
+  width: 30vw;
+  background-color: #8BB82A;
+  width: 30vw;
+  font-size: 20px;
+  border-radius: 15px;
 }
 
 h3 {
@@ -126,7 +126,9 @@ h3 {
     transform: scale(0.8);
   }
 }
-
+.novosti_img {
+  filter: blur(3px);
+}
 .offcanvas {
 
 }

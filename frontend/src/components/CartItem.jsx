@@ -13,11 +13,20 @@ export default function CartItem({ cart, isPopulationGrowth }) {
     //     <p>{cart.body}</p>
     //   </div>
     // </div>
-    <Card className="bg-dark text-white carts cart__image" style={{ backgroundImage: `url(https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/catalog/${cart.title.replace(/ /g, '_')}.png)`, backgroundSize: 'cover' }}>
+    <Card
+      onClick={(e) => e.stopPropagation()}
+      className="bg-dark text-white carts cart__image"
+      style={{
+        backgroundImage: `url(https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/catalog/${cart.title.replace(
+          / /g,
+          '_',
+        )}.png)`,
+        backgroundSize: 'cover',
+      }}>
       <div className="cart__cotent">
         <Card.Title className="cart__title">{cart.title}</Card.Title>
         <div className="hr"></div>
-        <Card.Text>популяция: 6</Card.Text>
+        <Card.Text>популяция: {cart.population}</Card.Text>
       </div>
       <Button onClick={() => router('/catalog/' + cart.id)} variant="light" className="cart__button">
         Подробнее
