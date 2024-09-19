@@ -51,7 +51,7 @@ export default function Moderation() {
       <main>
         <section className="section1">
           <div onClick={() => setVisibleCatalogue(true)} className="conteiner_catalogue">
-            <h3>Флора и фауна</h3>
+            <h3>Последнии изменения</h3>
             <div className="catalogue">
               <Cataloglist
                 carts={[

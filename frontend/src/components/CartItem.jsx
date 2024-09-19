@@ -28,7 +28,7 @@ export default function CartItem({ cart, isPopulationGrowth }) {
         <div className="hr"></div>
         <Card.Text>популяция: {cart.population}</Card.Text>
       </div>
-      <Button onClick={() => router('/catalog/' + cart.id)} variant="light" className="cart__button">
+      <Button onClick={() => router('/moderation/catalog/cart/' + cart.id)} variant="light" className="cart__button">
         Подробнее
       </Button>
 

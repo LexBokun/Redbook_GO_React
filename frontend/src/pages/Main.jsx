@@ -6,38 +6,11 @@ export default function Main() {
     <div className="Main">
       <div className="container_navbar">
         <header className="navbar">
-          <div className="menu">
-            <svg viewBox="0 0 60 46" fill="none">
-              <rect width="60" height="10" rx="5" fill="white" />
-              <rect y="18" width="50" height="10" rx="5" fill="white" />
-              <rect y="36" width="40" height="10" rx="5" fill="white" />
-            </svg>
-          </div>
           <nav className="nav-links">
             <a href="#about">О парке</a>
             <a href="#fauna">Фауна</a>
             <a href="#routes">Маршруты</a>
           </nav>
-          <div className="search">
-            <svg width="45" height="45" viewBox="0 0 45 45" fill="none">
-              <rect width="45" height="45" fill="url(#pattern0_13_27)" />
-              <defs>
-                <pattern id="pattern0_13_27" patternContentUnits="objectBoundingBox" width="1" height="1">
-                  <use transform="scale(0.00195312)" />
-                </pattern>
-                <image id="image0_13_27" width="512" height="512" />
-              </defs>
-            </svg>
-            <svg width="45" height="45" viewBox="0 0 45 45" fill="none">
-              <rect width="45" height="45" fill="url(#pattern0_13_27)" />
-              <defs>
-                <pattern id="pattern0_13_27" patternContentUnits="objectBoundingBox" width="1" height="1">
-                  <use transform="scale(0.00195312)" />
-                </pattern>
-                <image id="image0_13_27" width="512" height="512" />
-              </defs>
-            </svg>
-          </div>
         </header>
         <h1>Зелёная Москва</h1>
       </div>
@@ -68,7 +41,7 @@ export default function Main() {
             <rect x="300.313" y="64.3304" width="1551.69" height="82.4335" rx="38" fill="white" />
           </svg>
         </div>
-        <section className="section_1">
+        <section id='about' className="about">
           <div className="flex">
             <div className="col-1">
               <h2>Знакомство с парком</h2>
@@ -79,8 +52,7 @@ export default function Main() {
               <button>Подробнее</button>
             </div>
             <div className="col-2">
-              <img src="" alt="" />
-              200
+              <img src="https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/main/eed.png" alt="" />
             </div>
           </div>
         </section>
