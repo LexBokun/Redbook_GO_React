@@ -15,7 +15,7 @@ func main() {
 	r.GET("/species/:id", controllers.GetSpeciesById)
 
 	r.POST("/species", controllers.CreateSpecies)
-	// admin.PUT("/species/:id", controllers.UpdateSpecies)
-	// admin.DELETE("/species/:id", controllers.DeleteSpecies)
+	r.PUT("/species/:id", controllers.UpdateSpecies)
+	r.DELETE("/species/:id", controllers.DeleteSpecies)
 	r.Run(":8080")
 }
