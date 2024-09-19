@@ -1,17 +1,18 @@
 import React from 'react'
 import '../style/Main.css'
+import { useNavigate, Link } from 'react-router-dom'
 import MyNavbar from '../components/UI/navbar_Main/MyNavbar'
 import YandexMapComponent from '../components/YandexMapComponent'
 
 export default function Main() {
+  const resu = useNavigate()
   return (
     <div className="Main">
       <div className="container_navbar">
         <header className="navbar">
           <nav className="nav-links">
             <a href="#about">О парке</a>
-            <a href="#fauna">Фауна</a>
-            <a href="#routes">Маршруты</a>
+            <a onClick={resu("/catalog")} >Фауна</a>
           </nav>
         </header>
         <h1>Замоцкворецкий парк</h1>

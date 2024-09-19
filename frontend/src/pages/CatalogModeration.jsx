@@ -33,7 +33,7 @@ export default function CartCatalog() {
         [55.7, 37.55],
         [55.72, 37.53],
         [55.75, 37.5],
-      ]
+      ],
     },
     {
       id: 2,
@@ -60,7 +60,7 @@ export default function CartCatalog() {
         [55.7, 37.55],
         [55.72, 37.53],
         [55.75, 37.5],
-      ]
+      ],
     },
     {
       id: 3,
@@ -85,7 +85,7 @@ export default function CartCatalog() {
         [55.7, 37.55],
         [55.72, 37.53],
         [55.75, 37.5],
-      ]
+      ],
     },
   ])
 
@@ -113,10 +113,10 @@ export default function CartCatalog() {
       {/* Карточка животного */}
       {carts.map((cart) => (
         <div key={cart.id} className="card">
-           <div className="flex">
-              <h2>{cart.title}</h2>
-            <button className='cart_kol2 but'>Изменить информацию</button>
-           </div>
+          <div className="flex">
+            <h2>{cart.title}</h2>
+            <button className="cart_kol2 but">Изменить информацию</button>
+          </div>
           <div className="row">
             {/* Основная информация */}
             <div className="col-md-8">
@@ -187,11 +187,13 @@ export default function CartCatalog() {
                       </div>
                     </p>
                   </div>
-                    {cart.isHibernation && (
-                      <div className="hibernation">
-                        <div>Птица находится в зимовке в период с <b>октября</b> по <b>март</b></div>
+                  {cart.isHibernation && (
+                    <div className="hibernation">
+                      <div>
+                        Птица находится в зимовке в период с <b>октября</b> по <b>март</b>
                       </div>
-                    )}
+                    </div>
+                  )}
                 </div>
               </div>
               {/* описание */}
@@ -204,11 +206,11 @@ export default function CartCatalog() {
             <div className="col-md-4 areal">
               <div className="card">
                 <div className="card-body">
-                <div
-                        className="card-image"
-                        style={{
-                          backgroundImage: `url("https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/catalog/kart/${cart.id}.png")`,
-                        }}></div>
+                  <div
+                    className="card-image"
+                    style={{
+                      backgroundImage: `url("https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/catalog/kart/${cart.id}.png")`,
+                    }}></div>
                   <h5 className="card-title">Ареал обитания</h5>
                   <p className="card-text">{cart.habitat}</p>
                 </div>

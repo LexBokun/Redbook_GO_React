@@ -200,17 +200,11 @@ export default function CartCatalog() {
             <div className="col-md-4 areal">
               <div className="card">
                 <div className="card-body">
-                  <YandexMap
-                    center={[55.75, 37.6]} // Центр карты
-                    zoom={10} // Масштаб карты
-                    polygonCoords={cart.Coordinates} // Координаты полигона
-                    hintContent="Неровная зона" // Подсказка для полигона
-                    fillColor="#FF0000" // Цвет заливки полигона
-                    strokeColor="#0000FF" // Цвет границ полигона
-                    opacity={0.6} // Прозрачность полигона
-                    strokeWidth={3} // Толщина линий
-                    strokeStyle="shortdash" // Стиль границ полигона
-                  />
+                <div
+                    className="card-image"
+                    style={{
+                      backgroundImage: `url("https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/kart/${cart.id}.png")`,
+                    }}></div>
                   <h5 className="card-title">Ареал обитания</h5>
                   <p className="card-text">{cart.habitat}</p>
                 </div>
