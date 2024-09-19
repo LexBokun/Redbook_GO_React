@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '../style/СatalogMain.css'
-import {Carousel} from 'react-bootstrap'
+import { Carousel } from 'react-bootstrap'
 
 export default function CartCatalog() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -51,24 +51,41 @@ export default function CartCatalog() {
               <div className="row">
                 {/* Изображение */}
                 <div className="col">
-                  <img src={cart.image} className="img-fluid rounded-start" alt={cart.name} />
+                  <div
+                    className="card-image"
+                    style={{
+                      backgroundImage: `url("https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/catalog/${cart.name.replace(
+                        / /g,
+                        '_',
+                      )}/1.png")`,
+                    }}></div>
                   <Carousel>
                     <Carousel.Item>
+                      <div
+                        className="card-image"
+                        style={{
+                          backgroundImage: `url("https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/catalog/${cart.name.replace(
+                            / /g,
+                            '_',
+                          )}/1.png")`,
+                        }}></div>{' '}
                       <Carousel.Caption>
                         <h3>First slide label</h3>
                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                       </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
+                      <div
+                        className="card-image"
+                        style={{
+                          backgroundImage: `url("https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/catalog/${cart.name.replace(
+                            / /g,
+                            '_',
+                          )}/1.png")`,
+                        }}></div>
                       <Carousel.Caption>
                         <h3>Second slide label</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                      <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                       </Carousel.Caption>
                     </Carousel.Item>
                   </Carousel>

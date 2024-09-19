@@ -114,7 +114,7 @@ export default function Moderation() {
             </Form.Group>
             
             <Button className="novosti_button" variant="success" type="submit" onClick={() => setVisibleNovosti(false)}>
-              Submit
+              Выложить
             </Button>
           </Form>
       </MyModal>
