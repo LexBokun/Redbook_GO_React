@@ -33,7 +33,6 @@ func InitBD() {
 	} else {
 		log.Println("Database connection check passed")
 	}
-
 	DB.AutoMigrate(&models.Species{})
 }
 
