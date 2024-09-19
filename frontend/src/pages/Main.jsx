@@ -1,6 +1,8 @@
 import React from 'react'
 import '../style/Main.css'
 import MyNavbar from '../components/UI/navbar_Main/MyNavbar'
+import YandexMapComponent from '../components/YandexMapComponent'
+
 export default function Main() {
   return (
     <div className="Main">
@@ -69,6 +71,7 @@ export default function Main() {
             </div>
           </div>
         </section>
+        {/* <YandexMapComponent /> */}
       </main>
     </div>
   )

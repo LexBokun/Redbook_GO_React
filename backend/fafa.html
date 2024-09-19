@@ -13,58 +13,78 @@
 <body>
     <div id="map"></div>
 
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <div id="map" style="width: 600px; height: 400px"></div>
     <script type="text/javascript">
         ymaps.ready(init);
-
+    
         function init() {
-            // Создаем карту
             var myMap = new ymaps.Map("map", {
-                center: [55.762886, 37.435554], // Центр карты
-                zoom: 15 // Масштаб карты
+                center: [55.751574, 37.573856], // Центр Москвы
+                zoom: 10
             });
-
-            // Создаем полигон с неровными границами
-            var myPolygon = new ymaps.Polygon([
-                [
-                    [55.760438, 37.436393],
-                    [55.760457, 37.435314], 
-                    [55.760267, 37.434449], 
-                    [55.760868, 37.432774], 
-                    [55.761651, 37.433098], 
-                    [55.762441, 37.434876], 
-                    [55.763097, 37.435189], 
-                    [55.763889, 37.434955], 
-                    [55.763743, 37.435774],
-                    [55.763325, 37.435919],
-                    [55.763005, 37.437559],
-                ],
-                [
-                    [55.764415, 37.437089],
-                    [55.764172, 37.435902], 
-                    [55.764032, 37.435669], 
-                    [55.764117, 37.435202], 
-                    [55.764386, 37.435311], 
-                    [55.764599, 37.434383], 
-                    [55.765015, 37.434527], 
-                    [55.765395, 37.437101], 
-                    [55.764704, 37.438405],
-                    [55.763311, 37.437824],
-                    [55.763361, 37.437558],
-                    [55.764232, 37.437878],
-                ]
-            ], {
-                hintContent: "Выдра"
-            }, {
-                fillColor: '#0000FF', // Цвет заливки
-                strokeColor: '#FF0000', // Цвет границы
-                opacity: 0.6, // Прозрачность
-                strokeWidth: 3, // Толщина линии
-                strokeStyle: 'shortdash' // Стиль границ (можно использовать различные стили: сплошная, пунктирная, штриховая и др.)
+    
+            // Объект для хранения полигона
+            var myPolygon;
+            var drawMode = false;
+    
+            // Кнопка для активации режима рисования
+            var drawButton = new ymaps.control.Button("Нарисовать зону");
+            drawButton.events.add('press', function () {
+                drawMode = !drawMode;
+                if (drawMode) {
+                    drawButton.data.set('content', 'Завершить рисование');
+                    startDrawing();
+                } else {
+                    drawButton.data.set('content', 'Нарисовать зону');
+                    finishDrawing();
+                }
             });
-
-            // Добавляем полигон на карту
-            myMap.geoObjects.add(myPolygon);
+    
+            // Добавляем кнопку на карту
+            myMap.controls.add(drawButton);
+    
+            // Функция начала рисования
+            function startDrawing() {
+                myPolygon = new ymaps.GeoObject({
+                    geometry: {
+                        type: "Polygon",
+                        coordinates: [[]], // Начальные координаты
+                        fillRule: "nonZero"
+                    },
+                    properties: {},
+                    options: {
+                        editorDrawingCursor: "crosshair",
+                        // Активируем редактор для рисования
+                        editorMaxPoints: 50,
+                        fillColor: '#00FF0088',
+                        strokeColor: '#0000FF',
+                        strokeWidth: 2
+                    }
+                });
+    
+                myMap.geoObjects.add(myPolygon);
+                myPolygon.editor.startDrawing(); // Начало рисования
+            }
+    
+            // Функция завершения рисования
+            function finishDrawing() {
+                myPolygon.editor.stopDrawing(); // Завершение рисования
+                var coordinates = myPolygon.geometry.getCoordinates(); // Получаем координаты
+                console.log("Координаты выделенной зоны:", coordinates);
+                // Здесь можно отправить координаты на сервер для обработки
+                fetch('/find-species', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ coords: coordinates })
+                }).then(response => response.json())
+                  .then(data => {
+                      console.log("Найденные species:", data);
+                      // Вывести данные species на карте
+                  });
+            }
         }
     </script>
+    
 </body>
 </html>

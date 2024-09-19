@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 
 const YandexMap = ({ center, zoom, polygonCoords, hintContent, fillColor, strokeColor, opacity, strokeWidth, strokeStyle }) => {
-  useEffect(() => {
+  useEffect ( () => {
     const script = document.createElement('script');
     script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
     script.type = 'text/javascript';

@@ -7,8 +7,8 @@
 }
 
 h2 {
+  width: 40%;
   /* font-size: 36px; */
-
   margin-bottom: 20px;
 }
 
@@ -64,4 +64,18 @@ h2 {
   .active {
     background-color: #8BB82A;
   }
+}
+
+.but {
+
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 1px;
 }
