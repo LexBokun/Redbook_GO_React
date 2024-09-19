@@ -9,7 +9,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-
 func DeleteSpecies(c *gin.Context) {
 	idParam := c.Param("id")
 	if idParam == "" {
@@ -24,16 +23,13 @@ func DeleteSpecies(c *gin.Context) {
 	}
 
 	var species models.Species
-	result := database.DB.First(&species, id)
-	if result.Error != nil {
+	if err := database.DB.First(&species, id).Error; err != nil {
 		c.JSON(http.StatusNotFound, gin.H{"error": "Species not found"})
 		return
-	} else {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": result.Error.Error()})
 	}
 
 	if err := database.DB.Delete(&species).Error; err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to delete species"})
 		return
 	}
 

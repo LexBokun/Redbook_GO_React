@@ -30,7 +30,8 @@ func CreateSpecies(c *gin.Context) {
 		Description:    req.Description,
 		Habitat:        req.Habitat,
 		Population: 		req.Population,	
-		// Coordinates: 		req.Coordinates,
+		Coordinates: 		req.Coordinates,
+		ResidenceTime: 	req.ResidenceTime,
 	}
 
 	if err := services.CreateSpecies(database.DB, &species); err != nil {

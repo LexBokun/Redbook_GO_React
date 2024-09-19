@@ -42,6 +42,8 @@ func UpdateSpecies(c *gin.Context) {
 		Description:       input.Description,
 		Habitat:           input.Habitat,
 		Population:        input.Population,
+		Coordinates: 			 input.Coordinates,	
+		ResidenceTime: 		 input.ResidenceTime,	
 	}
 
 	if err := database.DB.Model(&species).Updates(updatedSpecies).Error; err != nil {
