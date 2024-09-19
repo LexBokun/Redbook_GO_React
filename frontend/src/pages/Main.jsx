@@ -12,7 +12,7 @@ export default function Main() {
             <a href="#routes">Маршруты</a>
           </nav>
         </header>
-        <h1>Зелёная Москва</h1>
+        <h1>Замоцкворецкий парк</h1>
       </div>
 
       <main>
@@ -41,7 +41,7 @@ export default function Main() {
             <rect x="300.313" y="64.3304" width="1551.69" height="82.4335" rx="38" fill="white" />
           </svg>
         </div>
-        <section id='about' className="about">
+        <section id="about" className="about">
           <div className="flex">
             <div className="col-1">
               <h2>Знакомство с парком</h2>
@@ -49,10 +49,23 @@ export default function Main() {
                 Откройте для себя скрытые сокровища Москворецкого парка природы и истории в Москве, где обитают более 3 000 редких видов животных и
                 растений, включая те, что занесены в Красную книгу Москвы, и погрузитесь в уникальную флору и фауну столицы!
               </p>
-              <button>Подробнее</button>
+              <div className="btn">
+                <button>Подробнее</button>
+              </div>
             </div>
             <div className="col-2">
               <img src="https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/main/eed.png" alt="" />
+            </div>
+          </div>
+        </section>
+
+        <section id="catalogue" className="catalogue">
+          <div className="catalogue__content">
+            <div className="catalogue__title">
+              <h2>Каталог</h2>
+            </div>
+            <div className="catalogue__items">
+              
             </div>
           </div>
         </section>
