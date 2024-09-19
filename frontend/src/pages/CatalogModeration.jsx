@@ -16,7 +16,7 @@ export default function CartCatalog() {
       order: 'хищные',
       family: 'куньи',
       genus: 'ласки и хорьки',
-      category: '1',
+      category: 'LT',
       count: 9,
       description: `Описание: Этот зверёк длиной всего 18-26 сантиметров. Маленький размер позволяет ему легко находить себе местообитание даже в городской среде. Летом мех бурый, зимой – чисто белый. Кончик хвоста всегда чёрный.
       Несмотря на свой небольшой размер, горностай – настоящий хищник. По ночам он  охотится на мышевидных  грызунов и землероек, реже ест птиц, лягушек, насекомых и ягоды. При случае может подбирать остатки добычи более крупных хищников.
@@ -43,7 +43,7 @@ export default function CartCatalog() {
       order: 'дятлообразные',
       family: 'дятловые',
       genus: 'зеленые дятлы',
-      category: '1',
+      category: 'LC',
       count: 3,
       description: `Описание: Зеленый дятел - это птица длиной около 30-35 сантиметров. Его ярко-зеленая спина и крылья, а также белое лицо и брюхо делают его легко узнаваемым. У него есть характерный красный шлем на голове, который является отличительной чертой самцов.
       Несмотря на свой средний размер, зеленый дятел - это настоящий специалист по добыче пищи. Он использует свой мощный клюв, чтобы выдалбливать насекомых и их личинок из деревьев. Он также ест семена, орехи и фрукты.
@@ -70,7 +70,7 @@ export default function CartCatalog() {
       order: 'бобовоцветные',
       family: 'бобовые',
       genus: 'язвенник',
-      category: '1',
+      category: 'CR',
       count: 320,
       description: `Описание: Язвенник обыкновенный (Anthyllis vulneraria) - это двулетнее или многолетнее травянистое растение семейства Бобовые (Fabaceae). Оно имеет мощную корневую систему с длинными стеблями, достигающими высоты 15-30 см. Листья язвенника простые, длинночерешковые, с овально-ланцетными листочками. Цветки растения жёлтые, собраны в плотное головчатое соцветие.
       Язвенник обыкновенный произрастает на сухих лугах, солнечных склонах, известковых тощих лугах, каменоломнях, обочинах дорог, заброшенных землях, чаще всего на известковой почве.`,
@@ -176,7 +176,7 @@ export default function CartCatalog() {
                       <strong>Род: </strong> {cart.genus}
                     </p>
                     <p className="card-text">
-                      <strong>Катигория исчезновения: </strong> {cart.category}
+                      <strong>Охранный статус: </strong> {cart.category}
                     </p>
                     <p className="card-text">
                       <div>
@@ -207,9 +207,9 @@ export default function CartCatalog() {
               <div className="card">
                 <div className="card-body">
                   <div
-                    className="card-image"
+                    className="card-images"
                     style={{
-                      backgroundImage: `url("https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/catalog/kart/${cart.id}.png")`,
+                      backgroundImage: `url("https://raw.githubusercontent.com/LexBokun/Redbook_GO_React/main/frontend/src/assets/kart/${cart.id}.png")`,
                     }}></div>
                   <h5 className="card-title">Ареал обитания</h5>
                   <p className="card-text">{cart.habitat}</p>
